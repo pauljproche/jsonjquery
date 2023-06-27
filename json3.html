@@ -4,62 +4,50 @@
   <title>JSON Song List</title>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script>
-    $.get("songlist.json", function(data) {
-      var songList = JSON.parse(data);
-
-      $.each(songList, function(index, song) {
-        var genres = song.genres.join(", ");
-        var output = "<p>" +
-          song.title + "<br>" +
-          "<h1>Artist:</h1> " + song.artist + "<br>" +
-          "<h1>Genres:</h1> " + genres + "<br>" +
-          "<h1>Released:</h1> " + song.year +
-          "</p>";
-        $("#songList").append(output);
-      });
-    });
-
     $(document).ready(function() {
-      $("#filterForm").on("submit", function(e) {
-        e.preventDefault();
-        var selectedGenre = $("#genreSelect").val();
+      $.get("songlist.json", function(data) {
+        var songList = data.songList;
+        var genres = [];
 
-        $("#songList p").each(function() {
-          var songGenres = $(this).find("strong:contains('Genres:')").next().text();
-          if (songGenres.indexOf(selectedGenre) !== -1) {
-            $(this).show();
-          } else {
-            $(this).hide();
-          }
+        // Extract genres from the songList
+        $.each(songList, function(index, song) {
+          $.each(song.genres, function(i, genre) {
+            if (!genres.includes(genre)) {
+              genres.push(genre);
+            }
+          });
+        });
+
+        // Populate genre dropdown
+        var dropdown = $("select#genre");
+        $.each(genres, function(index, genre) {
+          dropdown.append($("<option></option>").attr("value", genre).text(genre));
+        });
+
+        // Filter the song titles on button click
+        $("button#filterButton").click(function() {
+          var selectedGenre = dropdown.val();
+          var filteredSongs = songList.filter(function(song) {
+            return song.genres.includes(selectedGenre);
+          });
+
+          $("div#output").empty();
+          $.each(filteredSongs, function(index, song) {
+            $("div#output").append("<p>" + song.title + "</p>");
+          });
         });
       });
     });
   </script>
 </head>
 <body>
-  <form id="filterForm">
-    <label for="genreSelect">Select Genre:</label>
-    <select id="genreSelect">
-      <option value="">All</option>
-      <!--now pop. the genre options from the JSON data -->
-      <script>
-        $.get("songlist.json", function(data) {
-          var songList = JSON.parse(data);
-          var genres = []; 
-          $.each(songList, function(index, song) {
-            genres.push(...song.genres); //set the genres
-          });
-          var uniqueGenres = [...new Set(genres)];
-
-          $.each(uniqueGenres, function(index, genre) { //only add new genres
-            $("#genreSelect").append("<option value='" + genre + "'>" + genre + "</option>");
-          });
-        });
-      </script>
+  <form>
+    <label for="genre">Select Genre:</label>
+    <select id="genre">
+      <!-- Genres will be dynamically populated here -->
     </select>
-    <button type="submit">Filter</button>
+    <button type="button" id="filterButton">Filter</button>
   </form>
-
-  <div id="songList"></div>
+  <div id="output"></div>
 </body>
 </html>
