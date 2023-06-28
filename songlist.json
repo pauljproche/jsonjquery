@@ -1,62 +1,62 @@
 {"songList": [
-    {
-      "title": "Bohemian Rhapsody",
-      "artist": "Queen",
-      "genres": ["Rock", "Progressive Rock"],
-      "year": 1975
-    },
-    {
-      "title": "Billie Jean",
-      "artist": "Michael Jackson",
-      "genres": ["Pop", "R&B"],
-      "year": 1982
-    },
-    {
-      "title": "Hotel California",
-      "artist": "Eagles",
-      "genres": ["Rock"],
-      "year": 1977
-    },
-    {
-      "title": "Smooth",
-      "artist": "Santana featuring Rob Thomas",
-      "genres": ["Rock", "Latin"],
-      "year": 1999
-    },
-    {
-      "title": "Rolling in the Deep",
-      "artist": "Adele",
-      "genres": ["Pop", "Soul"],
-      "year": 2010
-    },
-    {
-      "title": "Stairway to Heaven",
-      "artist": "Led Zeppelin",
-      "genres": ["Rock"],
-      "year": 1971
-    },
-    {
-      "title": "Imagine",
-      "artist": "John Lennon",
-      "genres": ["Pop", "Rock"],
-      "year": 1971
-    },
-    {
-      "title": "Thriller",
-      "artist": "Michael Jackson",
-      "genres": ["Pop", "R&B"],
-      "year": 1982
-    },
-    {
-      "title": "Sweet Child o' Mine",
-      "artist": "Guns N' Roses",
-      "genres": ["Rock"],
-      "year": 1987
-    },
-    {
-      "title": "I Will Always Love You",
-      "artist": "Whitney Houston",
-      "genres": ["Pop", "R&B"],
-      "year": 1992
-    }
-  ]}
+  {
+    "title": "Shape of You",
+    "artist": "Ed Sheeran",
+    "genres": ["Pop"],
+    "year": 2017
+  },
+  {
+    "title": "Rolling in the Deep",
+    "artist": "Adele",
+    "genres": ["Pop", "Soul"],
+    "year": 2010
+  },
+  {
+    "title": "Uptown Funk",
+    "artist": "Mark Ronson ft. Bruno Mars",
+    "genres": ["Pop", "Funk"],
+    "year": 2014
+  },
+  {
+    "title": "Thinking Out Loud",
+    "artist": "Ed Sheeran",
+    "genres": ["Pop"],
+    "year": 2014
+  },
+  {
+    "title": "Radioactive",
+    "artist": "Imagine Dragons",
+    "genres": ["Rock", "Alternative"],
+    "year": 2012
+  },
+  {
+    "title": "Humble",
+    "artist": "Kendrick Lamar",
+    "genres": ["Hip Hop"],
+    "year": 2017
+  },
+  {
+    "title": "Take Me to Church",
+    "artist": "Hozier",
+    "genres": ["Indie Rock", "Blues"],
+    "year": 2013
+  },
+  {
+    "title": "Somebody That I Used to Know",
+    "artist": "Gotye ft. Kimbra",
+    "genres": ["Pop", "Indie Pop"],
+    "year": 2011
+  },
+  {
+    "title": "Royals",
+    "artist": "Lorde",
+    "genres": ["Pop", "Alternative"],
+    "year": 2013
+  },
+  {
+    "title": "Blurred Lines",
+    "artist": "Robin Thicke ft. T.I., Pharrell Williams",
+    "genres": ["Pop", "R&B"],
+    "year": 2013
+  }
+]}

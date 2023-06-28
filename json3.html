@@ -9,7 +9,7 @@
         var songList = data.songList;
         var genres = [];
 
-        // Extract genres from the songList
+        //same as part 2
         $.each(songList, function(index, song) {
           $.each(song.genres, function(i, genre) {
             if (!genres.includes(genre)) {
@@ -18,13 +18,13 @@
           });
         });
 
-        // Populate genre dropdown
+        //populate the genre dropdown
         var dropdown = $("select#genre");
         $.each(genres, function(index, genre) {
           dropdown.append($("<option></option>").attr("value", genre).text(genre));
         });
 
-        // Filter the song titles on button click
+        //filter the song titles on button click
         $("button#filterButton").click(function() {
           var selectedGenre = dropdown.val();
           var filteredSongs = songList.filter(function(song) {
@@ -44,7 +44,7 @@
   <form>
     <label for="genre">Select Genre:</label>
     <select id="genre">
-      <!-- Genres will be dynamically populated here -->
+      <!--now dynamically pop. the gneres here -->
     </select>
     <button type="button" id="filterButton">Filter</button>
   </form>
