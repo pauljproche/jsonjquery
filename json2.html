@@ -7,7 +7,7 @@
     $(document).ready(function() {
       $.getJSON("songlist.json", function(data) {
         var songList = data;
-        alert(songList);
+        //alert(songList);
         $.each(songList, function(index, song) {
         
           var genres = song.genres.join(", ");
