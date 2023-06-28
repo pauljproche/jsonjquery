@@ -66,10 +66,14 @@
       }
     ];
 
-    var jsonData = JSON.stringify(songList);
-    console.log(jsonData);
+    var jsonData = JSON.stringify(songList, null, 2);
+
+    document.addEventListener("DOMContentLoaded", function() {
+      document.getElementById("rawData").textContent = jsonData;
+    });
   </script>
 </head>
 <body>
+  <pre id="rawData"></pre>
 </body>
 </html>
